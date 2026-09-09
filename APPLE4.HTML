@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Гайд №1 — Яблоня · Виктория Королева</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=DM+Sans:wght@300;400;500;600;700&family=Space+Mono:wght@400;700&display=swap"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'DM Sans',sans-serif;
+  background:#F5F3EE;color:#1a1512;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit;}
+img,video{max-width:100%;display:block;}
+
+/* ── HEADER ── */
+.hdr{
+  padding:0 48px;height:80px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid #1a1512;background:#F5F3EE;
+  position:sticky;top:0;z-index:100;
+}
+.logo{
+  font-family:'Playfair Display',serif;
+  font-size:24px;font-weight:700;
+  letter-spacing:0.02em;text-transform:uppercase;
+}
+.logo span{color:#B8956A;font-style:italic;}
+.nav{display:flex;gap:32px;}
+.nav a{
+  font-size:13px;font-weight:500;color:#5a5a5a;
+  letter-spacing:0.04em;transition:color .2s;
+}
+.nav a:hover{color:#1a1512;}
+.issue{
+  font-size:11px;font-weight:700;letter-spacing:.18em;
+  color:#B8956A;text-transform:uppercase;
+}
+
+/* ── HERO ── */
+.hero{
+  padding:100px 48px 80px;max-width:1100px;margin:0 auto;
+  text-align:center;
+}
+.hero-kicker{
+  font-size:11px;font-weight:700;letter-spacing:.25em;
+  color:#B8956A;text-transform:uppercase;margin-bottom:32px;
+}
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(48px,7vw,90px);font-weight:900;
+  line-height:1.02;margin-bottom:32px;letter-spacing:-0.01em;
+}
+.hero h1 span{color:#B8956A;font-style:italic;}
+.hero-sub{
+  font-size:18px;color:#6a6a6a;line-height:1.7;
+  margin-bottom:48px;max-width:680px;margin-left:auto;margin-right:auto;
+}
+.hero-divider{
+  width:80px;height:1px;background:#1a1512;
+  margin:0 auto 40px;
+}
+.hero-tags{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.htag{
+  font-size:12px;font-weight:600;padding:8px 18px;
+  border:1px solid #d0c9bb;color:#6a6a6a;
+  transition:all .25s;
+}
+.htag:hover{border-color:#B8956A;color:#B8956A;}
+
+/* ── VIDEO SECTION ── */
+.vid-sec{
+  padding:0 48px 80px;max-width:900px;margin:0 auto;
+}
+.vid-wrap{
+  position:relative;
+  background:#1a1512;
+  border-radius:0;
+  overflow:hidden;
+  aspect-ratio:9/16;
+  max-width:400px;
+  margin:0 auto;
+  box-shadow:0 20px 60px rgba(0,0,0,0.2);
+}
+.vid-wrap video{
+  width:100%;height:100%;object-fit:cover;
+}
+.vid-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:32px 24px 24px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.75));
+  color:#fff;
+}
+.vid-meta{
+  display:flex;align-items:center;justify-content:space-between;
+  margin-bottom:8px;
+}
+.rec-badge{
+  font-family:'Space Mono',monospace;
+  font-size:10px;font-weight:700;
+  color:#ff4444;letter-spacing:.12em;
+  display:flex;align-items:center;gap:6px;
+}
+.rec-badge::before{
+  content:'';width:7px;height:7px;border-radius:50%;
+  background:#ff4444;animation:blink 1s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.vid-info{
+  font-family:'Space Mono',monospace;
+  font-size:9px;color:rgba(255,255,255,0.5);letter-spacing:.1em;
+}
+.vid-caption{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:15px;
+  color:rgba(255,255,255,0.8);
+}
+
+/* ── STATS BAND ── */
+.band{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  background:#fff;border-top:1px solid #e0d8cf;border-bottom:1px solid #e0d8cf;
+  margin-top:60px;
+}
+.band-item{
+  padding:28px 32px;border-right:1px solid #e0d8cf;
+  text-align:center;
+}
+.band-item:last-child{border-right:none;}
+.bv{
+  font-family:'Playfair Display',serif;
+  font-size:36px;font-weight:700;color:#B8956A;
+}
+.bk{font-size:11px;letter-spacing:.18em;color:#888;margin-top:6px;text-transform:uppercase;}
+
+/* ── SECTION ── */
+.sec{padding:100px 48px;max-width:1200px;margin:0 auto;}
+.sec-hdr{
+  display:flex;justify-content:space-between;align-items:flex-start;
+  margin-bottom:64px;gap:80px;
+}
+.sec-left{min-width:200px;}
+.sec-num{
+  font-family:'Playfair Display',serif;
+  font-size:140px;font-weight:900;
+  color:rgba(184,149,106,0.08);line-height:1;
+  margin-bottom:12px;
+}
+.sec-kicker{
+  font-size:11px;font-weight:700;letter-spacing:.25em;
+  color:#B8956A;text-transform:uppercase;
+}
+.sec-right{flex:1;}
+.sec-right h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(32px,4vw,52px);font-weight:700;
+  line-height:1.15;margin-bottom:20px;
+}
+.lead{font-size:17px;color:#6a6a6a;line-height:1.8;max-width:640px;}
+.hr{height:1px;background:#e0d8cf;max-width:none;margin:0;}
+
+/* ── КАРТОЧКИ 4 ── */
+.cards4{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:32px;
+}
+.card4{
+  padding:0;
+  transition:transform .3s;
+}
+.card4:hover{transform:translateY(-8px);}
+.c4-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:72px;color:rgba(184,149,106,0.15);
+  margin-bottom:24px;line-height:1;
+}
+.c4-title{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;margin-bottom:12px;
+}
+.c4-desc{font-size:14px;color:#6a6a6a;line-height:1.75;}
+
+/* ── ФОТО СЕТКА ── */
+.pgrid{
+  display:grid;grid-template-columns:repeat(3,1fr);gap:24px;
+}
+.pc{
+  position:relative;overflow:hidden;
+  aspect-ratio:3/4;
+}
+.pc img{
+  width:100%;height:100%;object-fit:cover;
+  transition:transform .6s ease;
+}
+.pc:hover img{transform:scale(1.06);}
+.pc-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:28px 20px 20px;
+  background:linear-gradient(transparent,rgba(0,0,0,0.7));
+  color:#fff;
+}
+.pc-num{
+  font-family:'Space Mono',monospace;font-size:10px;
+  color:rgba(255,255,255,0.5);letter-spacing:.15em;
+  margin-bottom:6px;text-transform:uppercase;
+}
+.pc-label{
+  font-family:'Playfair Display',serif;
+  font-style:italic;font-size:16px;
+}
+
+/* ── ТАБЛИЦА ── */
+.photo-table{width:100%;border-collapse:collapse;}
+.photo-table th{
+  background:#fff;color:#1a1512;
+  font-size:11px;font-weight:700;letter-spacing:.2em;
+  padding:16px 24px;text-align:left;text-transform:uppercase;
+  border-bottom:1px solid #e0d8cf;
+}
+.photo-table td{
+  padding:20px 24px;border-bottom:1px solid #f0f0f0;
+  font-size:15px;color:#1a1512;background:#fff;
+}
+.photo-table tr:last-child td{border-bottom:none;}
+.photo-table tr:hover td{background:#fafafa;}
+.td-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:28px;color:rgba(184,149,106,0.3);width:80px;
+}
+.td-role{color:#6a6a6a;font-size:14px;}
+.td-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:12px;font-weight:700;padding:5px 14px;
+  border:1px solid #B8956A;color:#B8956A;
+}
+
+/* ── STEPS ── */
+.steps{display:grid;grid-template-columns:1fr 1fr;gap:32px;}
+.step{
+  padding:40px;background:#fff;
+  border:1px solid #e0d8cf;
+  transition:all .3s;
+}
+.step:hover{background:#fafafa;border-color:#B8956A;}
+.step-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:56px;color:rgba(184,149,106,0.15);
+  margin-bottom:20px;line-height:1;
+}
+.step h3{
+  font-family:'Playfair Display',serif;
+  font-size:20px;font-weight:700;margin-bottom:10px;
+}
+.step p{font-size:15px;color:#6a6a6a;line-height:1.75;}
+.step strong{color:#1a1512;}
+
+/* ── TECH TABLE ── */
+.tech-table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e0d8cf;}
+.tech-table tr{border-bottom:1px solid #f0f0f0;}
+.tech-table tr:last-child{border-bottom:none;}
+.tech-table td{padding:18px 28px;font-size:15px;}
+.tech-table td:first-child{
+  font-weight:700;color:#888;font-size:13px;
+  letter-spacing:.08em;width:240px;
+  border-right:1px solid #f0f0f0;background:#fafafa;
+}
+.tech-table td:last-child{font-weight:600;color:#1a1512;}
+.tech-highlight{background:#fff8f0 !important;color:#B8956A !important;}
+.tech-warn{
+  font-size:14px;color:#6a6a6a;margin-top:24px;
+  padding:18px 24px;border-left:3px solid #B8956A;
+  background:#fff8f0;line-height:1.75;
+}
+.tech-warn strong{color:#B8956A;}
+
+/* ── ПРОМТ ── */
+.pbox{border:1px solid #e0d8cf;overflow:hidden;background:#fff;}
+.pbox-hdr{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:16px 28px;border-bottom:1px solid #e0d8cf;background:#fafafa;
+}
+.pbox-title{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:16px;color:#1a1512;
+}
+.cbtn{
+  font-family:'Space Mono',monospace;
+  font-size:11px;font-weight:700;padding:10px 22px;
+  background:#1a1512;border:none;
+  color:#F5F3EE;cursor:pointer;letter-spacing:.12em;
+  transition:all .25s;text-transform:uppercase;
+}
+.cbtn:hover{background:#B8956A;}
+.pbox-note{
+  padding:16px 28px;background:#fffbf5;border-bottom:1px solid #f0f0f0;
+  font-size:13px;color:#6a6a6a;
+}
+.pbox-note strong{color:#B8956A;}
+.ptxt{
+  padding:32px 28px;font-family:'Space Mono',monospace;
+  font-size:12.5px;line-height:2;color:#888;
+  max-height:380px;overflow-y:auto;white-space:pre-wrap;
+}
+.ptxt::-webkit-scrollbar{width:4px;}
+.ptxt::-webkit-scrollbar-thumb{background:#ddd;border-radius:4px;}
+
+/* ── CTA ── */
+.cta{
+  padding:120px 48px;background:#1a1512;color:#F5F3EE;
+  text-align:center;
+}
+.cta-kicker{
+  font-size:11px;font-weight:700;letter-spacing:.25em;
+  color:#B8956A;text-transform:uppercase;margin-bottom:24px;
+}
+.cta h2{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(40px,6vw,80px);font-weight:900;
+  line-height:1.05;margin-bottom:24px;
+}
+.cta h2 span{font-style:italic;color:#B8956A;}
+.cta p{font-size:17px;color:rgba(245,243,238,0.5);margin-bottom:48px;}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:14px;
+  background:#B8956A;color:#1a1512;
+  font-size:14px;font-weight:700;padding:20px 48px;
+  letter-spacing:.12em;text-transform:uppercase;
+  transition:all .3s;
+}
+.cta-btn:hover{background:#F5F3EE;}
+.cta-sub{
+  margin-top:24px;font-size:12px;
+  color:rgba(245,243,238,0.3);letter-spacing:.08em;
+}
+
+/* ── FOOTER ── */
+footer{
+  padding:32px 48px;border-top:1px solid #e0d8cf;background:#F5F3EE;
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:13px;color:#888;
+}
+footer strong{color:#1a1512;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hdr{padding:0 20px;height:70px;}
+  .logo{font-size:20px;}
+  .nav{display:none;}
+  .hero{padding:60px 20px 50px;}
+  .sec{padding:70px 20px;}
+  .sec-hdr{flex-direction:column;gap:20px;}
+  .sec-num{font-size:80px;}
+  .cards4{grid-template-columns:1fr;}
+  .pgrid{grid-template-columns:1fr;}
+  .steps{grid-template-columns:1fr;}
+  .band{grid-template-columns:repeat(2,1fr);}
+  .cta{padding:80px 20px;}
+  footer{flex-direction:column;gap:8px;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<header class="hdr">
+  <div class="logo">PESOCHNITSA<span>.AI</span></div>
+  <nav class="nav">
+    <a href="#s01">О тренде</a>
+    <a href="#s02">Результат</a>
+    <a href="#s03">Как сделать</a>
+    <a href="#s04">Фото</a>
+    <a href="#s05">Параметры</a>
+    <a href="#s06">Промт</a>
+  </nav>
+  <div class="issue">Гайд № 01 · 2026</div>
+</header>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-kicker">Тренд «Яблоня»</div>
+  <h1>Один <span>непрерывный</span> кадр</h1>
+  <p class="hero-sub">
+    Персонаж трясёт яблоню — падает яблоко, затем птица садится на руку,
+    и наконец влетает ваш товар. Крупный план, лёгкое приближение, уход из кадра.
+  </p>
+  <div class="hero-divider"></div>
+  <div class="hero-tags">
+    <span class="htag">Seedance 2.5</span>
+    <span class="htag">12 секунд</span>
+    <span class="htag">9:16</span>
+    <span class="htag">720p</span>
+    <span class="htag">Без склеек</span>
+  </div>
+</section>
+
+<!-- ══ VIDEO ══ -->
+<div class="vid-sec">
+  <div class="vid-wrap">
+    <video
+      src="https://raw.githubusercontent.com/toriaqueen11-bot/apple-/main/video.mp4"
+      autoplay muted loop playsinline
+      preload="auto"
+    ></video>
+    <div class="vid-overlay">
+      <div class="vid-meta">
+        <div class="rec-badge">REC</div>
+        <div class="vid-info">SEEDANCE 2.5 · 12s · 9:16</div>
+      </div>
+      <div class="vid-caption">Один непрерывный кадр</div>
+    </div>
+  </div>
+</div>
+
+<!-- ══ BAND ══ -->
+<div class="band">
+  <div class="band-item"><div class="bv">12s</div><div class="bk">Длительность</div></div>
+  <div class="band-item"><div class="bv">9:16</div><div class="bk">Формат</div></div>
+  <div class="band-item"><div class="bv">720p</div><div class="bk">Качество</div></div>
+  <div class="band-item"><div class="bv">0</div><div class="bk">Склеек</div></div>
+</div>
+
+<!-- ══ 01 — О ТРЕНДЕ ══ -->
+<div class="hr"></div>
+<section class="sec" id="s01">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">01</div>
+      <div class="sec-kicker">О тренде</div>
+    </div>
+    <div class="sec-right">
+      <h2>Что происходит в ролике</h2>
+      <p class="lead">Четыре сцены, один непрерывный кадр. Каждая сильнее предыдущей. Внимание зрителя держится до финального появления продукта.</p>
+    </div>
+  </div>
+  <div class="cards4">
+    <div class="card4">
+      <div class="c4-num">01</div>
+      <div class="c4-title">🌳 Трясёт яблоню</div>
+      <div class="c4-desc">Персонаж трясёт ветку цветущей яблони — ожидание нарастает.</div>
+    </div>
+    <div class="card4">
+      <div class="c4-num">02</div>
+      <div class="c4-title">🍎 Падает яблоко</div>
+      <div class="c4-desc">Красное яблоко падает с дерева — персонаж ловит и отбрасывает.</div>
+    </div>
+    <div class="card4">
+      <div class="c4-num">03</div>
+      <div class="c4-title">🕊 Птица на руку</div>
+      <div class="c4-desc">Белый голубь плавно приземляется на ладонь и взмывает.</div>
+    </div>
+    <div class="card4">
+      <div class="c4-num">04</div>
+      <div class="c4-title">📦 Ваш товар</div>
+      <div class="c4-desc">Объект влетает в кадр с лёгким приближением — и исчезает.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 02 — РЕЗУЛЬТАТ ══ -->
+<div class="hr"></div>
+<section class="sec" id="s02">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">02</div>
+      <div class="sec-kicker">Результат</div>
+    </div>
+    <div class="sec-right">
+      <h2>Премиально. Атмосферно. Без склеек.</h2>
+      <p class="lead">Цельная сцена длиной 12 секунд. Эстетика аналоговой плёнки, рассеянный свет, фактурное зерно — кинематографичный образ.</p>
+    </div>
+  </div>
+  <div class="pgrid">
+    <div class="pc">
+      <img src="https://raw.githubusercontent.com/toriaqueen11-bot/apple-/main/me.png" alt="Персонаж" loading="lazy"/>
+      <div class="pc-overlay">
+        <div class="pc-num">01 / Персонаж</div>
+        <div class="pc-label">Человек в кадре</div>
+      </div>
+    </div>
+    <div class="pc">
+      <img src="https://raw.githubusercontent.com/toriaqueen11-bot/apple-/main/location.jfif" alt="Локация" loading="lazy"/>
+      <div class="pc-overlay">
+        <div class="pc-num">02 / Локация</div>
+        <div class="pc-label">Фон и яблоня</div>
+      </div>
+    </div>
+    <div class="pc">
+      <img src="https://raw.githubusercontent.com/toriaqueen11-bot/apple-/main/product.jpg" alt="Товар" loading="lazy"/>
+      <div class="pc-overlay">
+        <div class="pc-num">03 / Товар</div>
+        <div class="pc-label">Влетает последним</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 03 — КАК СДЕЛАТЬ ══ -->
+<div class="hr"></div>
+<section class="sec" id="s03">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">03</div>
+      <div class="sec-kicker">Как сделать</div>
+    </div>
+    <div class="sec-right">
+      <h2>Пошаговый алгоритм</h2>
+      <p class="lead">Всё делается в агрегаторе нейросетей. Работаем через <strong style="color:#1a1512">Lexy</strong>.</p>
+    </div>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Открываем сервис</h3>
+      <p>Заходим в <strong><a href="https://lexygpt.com/?ref=VNPOJ3_add" target="_blank" style="color:#B8956A;border-bottom:1px solid #B8956A;">Lexy по ссылке</a></strong>, выбираем раздел <strong>Видео</strong>.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Подключаем модель</h3>
+      <p>Из списка выбираем <strong>Seedance 2.5</strong> — только она корректно работает с тремя референсами.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Добавляем 3 фотографии</h3>
+      <p>В порядке: <strong>1 — человек · 2 — локация · 3 — товар</strong>. Порядок критически важен.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Добавляем промт</h3>
+      <p>Берём готовый <strong>мастер-промт</strong> снизу и вставляем без изменений.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">5</div>
+      <h3>Настраиваем параметры</h3>
+      <p><strong>Хронометраж:</strong> 12 сек · <strong>Формат:</strong> 9:16 · <strong>Разрешение:</strong> 720p</p>
+    </div>
+    <div class="step">
+      <div class="step-num">6</div>
+      <h3>Генерируем</h3>
+      <p>Нажимаем на генерацию и смотрим результат. Если не совпало — <strong>запускаем снова</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ 04 — ТРИ ФОТО ══ -->
+<div class="hr"></div>
+<section class="sec" id="s04">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">04</div>
+      <div class="sec-kicker">Три фото</div>
+    </div>
+    <div class="sec-right">
+      <h2>Порядок и логика</h2>
+      <p class="lead">Загружаем строго три снимка в указанной последовательности. Порядок определяет роль каждого объекта.</p>
+    </div>
+  </div>
+  <table class="photo-table">
+    <thead>
+      <tr>
+        <th>№</th>
+        <th>Снимок</th>
+        <th>Роль в ролике</th>
+        <th>Статус</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="td-num">01</td>
+        <td><strong>Фото 1</strong></td>
+        <td class="td-role">Человек — трясёт яблоню</td>
+        <td><span class="td-badge">👤 Персонаж</span></td>
+      </tr>
+      <tr>
+        <td class="td-num">02</td>
+        <td><strong>Фото 2</strong></td>
+        <td class="td-role">Локация с яблоней — фон и обстановка</td>
+        <td><span class="td-badge">🌳 Локация</span></td>
+      </tr>
+      <tr>
+        <td class="td-num">03</td>
+        <td><strong>Фото 3</strong></td>
+        <td class="td-role">Товар — влетает последним</td>
+        <td><span class="td-badge">📦 Товар</span></td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ══ 05 — ПАРАМЕТРЫ ══ -->
+<div class="hr"></div>
+<section class="sec" id="s05">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">05</div>
+      <div class="sec-kicker">Параметры</div>
+    </div>
+    <div class="sec-right">
+      <h2>Технические настройки</h2>
+      <p class="lead">Выставляем перед запуском генерации. Эти параметры оптимальны под тренд.</p>
+    </div>
+  </div>
+  <table class="tech-table">
+    <tr><td>Модель</td><td class="tech-highlight">Seedance 2.5</td></tr>
+    <tr><td>Хронометраж</td><td><strong>12 секунд</strong></td></tr>
+    <tr><td>Формат</td><td><strong>9:16</strong> (вертикальный)</td></tr>
+    <tr><td>Разрешение</td><td><strong>720p</strong></td></tr>
+    <tr><td>Фото-референсов</td><td><strong>3 штуки</strong> (в строгом порядке)</td></tr>
+    <tr><td>Агрегатор</td><td><a href="https://lexygpt.com/?ref=VNPOJ3_add" target="_blank" style="color:#B8956A;font-weight:700;border-bottom:1px solid #B8956A;">Lexy →</a></td></tr>
+  </table>
+  <p class="tech-warn">
+    ⚠️ <strong>Важно:</strong> твоё реальное видео-референс тоже должно быть снято в формате <strong>9:16</strong>.
+  </p>
+</section>
+
+<!-- ══ 06 — ПРОМТ ══ -->
+<div class="hr"></div>
+<section class="sec" id="s06">
+  <div class="sec-hdr">
+    <div class="sec-left">
+      <div class="sec-num">06</div>
+      <div class="sec-kicker">Мастер-промт</div>
+    </div>
+    <div class="sec-right">
+      <h2>Готовый промт для Seedance 2.5</h2>
+      <p class="lead">Копируем целиком и вставляем в поле промта. <strong style="color:#1a1512">Не сокращаем, не редактируем.</strong></p>
+    </div>
+  </div>
+  <div class="pbox">
+    <div class="pbox-hdr">
+      <div class="pbox-title">master-prompt.txt · Seedance 2.5</div>
+      <button class="cbtn" onclick="copyPrompt()">Скопировать</button>
+    </div>
+    <div class="pbox-note">
+      <strong>Инструкция:</strong> Копируем текст целиком и вставляем в поле промта. Не сокращаем, не редактируем.
+    </div>
+    <div class="ptxt" id="promptText">@Image1 = highest-priority character identity reference only. Use @Image1 for the person's exact face, facial proportions, hairstyle, skin tone, body proportions, clothing, styling, and overall personal appearance. Preserve the same person consistently throughout the entire video.
+
+@Image2 = environment and location reference only. Use @Image2 for the surrounding location with blossoming apple tree, landscape or architecture, spatial atmosphere, background structures, terrain, weather character, natural colour relationships, and environmental mood. The apple tree must be visible and integral to the scene.
+
+@Image3 = the hero product object reference only. Use @Image3 for the exact shape, colour, material, texture, proportions, and surface detail of the product. The product must appear physically real and three-dimensional when it enters the frame.
+
+SCENE: A single uncut 12-second cinematic shot in vertical 9:16 format. The person from @Image1 stands beside a large blossoming apple tree in the @Image2 location.
+
+— Beat 1 (0–3 sec): Person reaches up and shakes a thick branch of the blossoming apple tree.
+
+— Beat 2 (3–5 sec): A single red apple falls from the tree. Person catches it and tosses it aside.
+
+— Beat 3 (5–8 sec): Person shakes the branch again. A white dove gently lands on their outstretched palm, pauses briefly, then flies away past camera.
+
+— Beat 4 (8–12 sec): Person shakes the branch a third time. The @Image3 product flies smoothly into frame with a gentle camera push-in toward it, holds for a moment in sharp focus as the hero object, then exits frame.
+
+CAMERA: Continuous single take, no cuts, no transitions. 35mm film aesthetic, soft diffused natural light, subtle grain, warm colour grading. Strong foreground-midground-background separation. Shallow depth of field. Cinematic frame depth throughout.</div>
+  </div>
+</section>
+
+<!-- ══ CTA ══ -->
+<div class="hr"></div>
+<section class="cta">
+  <div class="cta-kicker">Готова к запуску?</div>
+  <h2>Промт готов.<br><span>Осталось нажать Generate.</span></h2>
+  <p>Берите промт, загружайте три фото в порядке и запускайте прямо сейчас.</p>
+  <a href="https://lexygpt.com/?ref=VNPOJ3_add" target="_blank" class="cta-btn">
+    Открыть Lexy →
+  </a>
+  <div class="cta-sub">Seedance 2.5 · 12 сек · 9:16 · 720p · Без монтажа</div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <span><strong>Виктория Королева</strong> (aishka_vika)</span>
+  <span>Тренд «Яблоня» · 2026</span>
+  <span>Seedance 2.5 via Lexy</span>
+</footer>
+
+<script>
+function copyPrompt(){
+  const text = document.getElementById('promptText').innerText;
+  navigator.clipboard.writeText(text).then(()=>{
+    const btn = document.querySelector('.cbtn');
+    const prev = btn.textContent;
+    btn.textContent = '✅ СКОПИРОВАНО';
+    setTimeout(()=>btn.textContent=prev, 2500);
+  });
+}
+</script>
+</body>
+</html>
